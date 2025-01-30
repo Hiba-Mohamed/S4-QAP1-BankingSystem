@@ -19,4 +19,15 @@ public class AccountTest {
         Assertions.assertEquals(300.00, account1.accountBalance);
     }
 
+    @Test
+    public void testWithdrawalFromAccount(){
+        account1.withdrawFromAccount(30.00);
+        Assertions.assertEquals(70.00, account1.accountBalance);
+        account1.withdrawFromAccount(70.00);
+        Assertions.assertEquals(0.00, account1.accountBalance);
+        account1.withdrawFromAccount(70.00);
+        Assertions.assertEquals(0.00, account1.accountBalance);
+
+    }
+
 }
